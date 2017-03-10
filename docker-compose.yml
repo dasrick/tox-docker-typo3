@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  web:
+    image: httpd:2.4.25-alpine
+    volumes:
+      - .:/app
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - php
+  php:
+    image: php:7.1.2-fpm-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+#    links:
+#      - db
+#  db:
+#    image: mariadb:latest
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - /private/var/lib/mysql:/var/lib/mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: rootpass
+#      MYSQL_DATABASE: db
+#      MYSQL_USER: user
+#      MYSQL_PASSWORD: pass
