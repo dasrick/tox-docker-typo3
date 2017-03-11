@@ -2,9 +2,10 @@ version: '2'
 
 services:
   web:
-    image: httpd:2.4.25-alpine
+    build: docker/httpd
     volumes:
       - .:/app
+      - ./docker/httpd/vhost.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     ports:
       - "80:80"
       - "443:443"
