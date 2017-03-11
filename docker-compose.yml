@@ -12,20 +12,30 @@ services:
     links:
       - php
   php:
-    image: php:7.1.2-fpm-alpine
+    build: docker/php-fpm
     volumes:
       - .:/app
+      - ./docker/php-fpm/php.ini:/usr/local/etc/php/conf.d/99-custom.ini
     working_dir: /app
-#    links:
-#      - db
-#  db:
-#    image: mariadb:latest
-#    ports:
-#      - "3306:3306"
-#    volumes:
-#      - /private/var/lib/mysql:/var/lib/mysql
-#    environment:
-#      MYSQL_ROOT_PASSWORD: rootpass
-#      MYSQL_DATABASE: db
-#      MYSQL_USER: user
+    environment:
+      - BLACKFIRE_SERVER_ID
+      - BLACKFIRE_SERVER_TOKEN
+      - BLACKFIRE_CLIENT_TOKEN
+      - BLACKFIRE_CLIENT_ID
+      - BLACKFIRE_LOG_LEVEL=4
+      - COMPOSER_HOME=/app/docker/composer
+      - LOCAL_USER_ID
+      - TYPO3_COMPOSER_AUTOLOAD=On
+    links:
+      - db
+  db:
+    build: docker/mysql
+    volumes:
+      - ./docker/mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_DATABASE: tox_typo3
 #      MYSQL_PASSWORD: pass

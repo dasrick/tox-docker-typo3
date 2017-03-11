@@ -24,3 +24,5 @@ syncs:
     sync_excludes: ['.git', '.gitignore', '.DS_Store', '.idea', '.editorconfig', 'docker', 'docker-sync.yml', 'docker-compose.yml', 'docker-compose-dev.yml', 'var/logs/*', 'var/cache/*']
 
     sync_excludes_type: 'Name'
+
+    sync_userid: '501'

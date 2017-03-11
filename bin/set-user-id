@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+printf "\e[1;34m==>\e[1;37m PREPARATION \e[0m \n"
+printf "\e[1;33m==>\e[1;37m PREPARATION \e[1;33m set local user id \e[0m"
+S_TIME=$SECONDS
+
+if  grep -q "export LOCAL_USER_ID=" ~/.zshrc; then
+	true
+else
+	echo 'export LOCAL_USER_ID=$(id -u)' >> ~/.zshrc
+fi
+
+if grep -q "export LOCAL_USER_ID=" ~/.profile; then
+	true
+else
+	echo 'export LOCAL_USER_ID=$(id -u)' >> ~/.profile
+fi
+
+if [[ $(uname -s) == "Darwin" ]]; then
+    if grep -q "export LOCAL_USER_ID=" ~/.bash_profile; then
+        true
+    else
+        echo 'export LOCAL_USER_ID=$(id -u)' >> ~/.bash_profile
+    fi
+fi
+export LOCAL_USER_ID=$(id -u)
+
+E_TIME=$(($SECONDS - $S_TIME))
+printf "\e[1;32m DONE \e[0m "
+printf "%02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))

@@ -1,0 +1,109 @@
+{
+    "name": "dasrick/typo3-portal",
+    "description": "TYPO3 Portal",
+    "require": {
+        "typo3/cms": "^7.6",
+
+        "typo3/cms-about": "^7.6",
+        "typo3/cms-aboutmodules": "^7.6",
+        "typo3/cms-backend": "^7.6",
+        "typo3/cms-belog": "^7.6",
+        "typo3/cms-beuser": "^7.6",
+        "typo3/cms-context-help": "^7.6",
+        "typo3/cms-extbase": "^7.6",
+        "typo3/cms-extensionmanager": "^7.6",
+        "typo3/cms-fluid": "^7.6",
+        "typo3/cms-fluid-styled-content": "^7.6",
+        "typo3/cms-filelist": "^7.6",
+        "typo3/cms-form": "^7.6",
+        "typo3/cms-frontend": "^7.6",
+        "typo3/cms-func": "^7.6",
+        "typo3/cms-impexp": "^7.6",
+        "typo3/cms-info": "^7.6",
+        "typo3/cms-info-pagetsconfig": "^7.6",
+        "typo3/cms-install": "^7.6",
+        "typo3/cms-lang": "^7.6",
+        "typo3/cms-lowlevel": "^7.6",
+        "typo3/cms-recordlist": "^7.6",
+        "typo3/cms-recycler": "^7.6",
+        "typo3/cms-reports": "^7.6",
+        "typo3/cms-rsaauth": "^7.6",
+        "typo3/cms-rtehtmlarea": "^7.6",
+        "typo3/cms-saltedpasswords": "^7.6",
+        "typo3/cms-scheduler": "^7.6",
+        "typo3/cms-setup": "^7.6",
+        "typo3/cms-sv": "^7.6",
+        "typo3/cms-sys-note": "^7.6",
+        "typo3/cms-t3editor": "^7.6",
+        "typo3/cms-t3skin": "^7.6",
+        "typo3/cms-tstemplate": "^7.6",
+        "typo3/cms-viewpage": "^7.6",
+        "typo3/cms-wizard-crpages": "^7.6",
+        "typo3/cms-wizard-sortpages": "^7.6",
+
+        "fluidtypo3/vhs": "~3.1.0",
+        "fluidtypo3/flux": "~7.4.0",
+        "fluidtypo3/fluidcontent": "~4.4.1",
+        "fluidtypo3/fluidpages": "~3.6.1",
+        "dmitryd/typo3-realurl": "2.1.5",
+        "sjbr/static-info-tables": "^6.3",
+        "lochmueller/sourceopt": "~0.9.3",
+        "mblaschke/metaseo": "~2.0.3",
+
+        "helhum/dotenv-connector": "^1.0.0",
+        "helhum/config-loader": "^0.1.0",
+        "helhum/typo3-console": "^4.0.0",
+        "magephp/magallanes": "^1.2.0"
+    },
+    "require-dev": {
+        "pyrech/composer-changelogs": "^1.5",
+        "phpunit/phpunit": "^5.5",
+        "phpunit/php-code-coverage": "^4.0"
+    },
+    "scripts": {
+        "generate-package-states": [
+            "touch ./web/typo3conf/PackageStates.php",
+            "rm ./web/typo3conf/PackageStates.php",
+            "bin/typo3cms install:generatepackagestates"
+        ],
+        "fix-folder-structure": [
+            "bin/typo3cms install:fixfolderstructure"
+        ],
+        "post-install-cmd": [
+            "@fix-folder-structure",
+            "@generate-package-states"
+        ],
+        "post-update-cmd": [
+            "@generate-package-states",
+            "bin/typo3cms cache:flush"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "bin-dir": "bin",
+        "secure-http": false
+    },
+    "autoload": {
+        "psr-4": {
+            "Dasrick\\TYPO3\\Distribution\\": "src"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        },
+        "typo3/class-alias-loader": {
+            "autoload-case-sensitivity": false,
+            "class-alias-maps": []
+        },
+        "helhum/dotenv-connector": {
+            "env-dir": "",
+            "allow-overrides": true
+        },
+        "helhum/typo3-console": {
+            "install-binary": false,
+            "install-extension-dummy": false
+        }
+    }
+}
