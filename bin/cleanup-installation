@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+########################################################################################################################
+# TYPO3 cleanup before installation
+#-----------------------------------------------------------------------------------------------------------------------
+printf "\e[1;34m==>\e[1;37m TYPO3 \e[0m \n"
+
+printf "\e[1;33m==>\e[1;37m TYPO3 clean \e[1;33m index & Co. \e[0m"
+
+rm -rf \
+        .env \
+        bin/mage \
+        bin/phpunit \
+        bin/typo3cms \
+        docker/logs \
+        docker/mysql-data \
+        var/cache/cached-* \
+        vendor \
+        web/fileadmin \
+        web/typo3 \
+        web/typo3conf/ENABLE_INSTALL_TOOL \
+        web/typo3conf/LocalConfiguration.php \
+        web/typo3conf/PackageStates.php \
+        web/typo3conf/ext/fluidcontent \
+        web/typo3conf/ext/fluidpages \
+        web/typo3conf/ext/flux \
+        web/typo3conf/ext/metaseo \
+        web/typo3conf/ext/realurl \
+        web/typo3conf/ext/sourceopt \
+        web/typo3conf/ext/static_info_tables \
+        web/typo3conf/ext/vhs \
+        web/typo3conf/l10n \
+        web/typo3temp \
+        web/uploads \
+        web/index.php \
+
+
+printf "\e[1;32m DONE \e[0m \n"

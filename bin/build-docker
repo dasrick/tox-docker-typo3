@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+########################################################################################################################
+# docker images
+#-----------------------------------------------------------------------------------------------------------------------
+printf "\e[1;34m==>\e[1;37m DOCKER \e[0m \n"
+
+bin/stop
+
+printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m build default \e[0m"
+S_TIME=$SECONDS
+docker-compose -f docker-compose.yml build >/dev/null 2>&1
+E_TIME=$(($SECONDS - $S_TIME))
+printf "\e[1;32m DONE \e[0m "
+printf "%02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+
+printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m build dev \e[0m"
+S_TIME=$SECONDS
+docker-compose -f docker-compose-dev.yml build >/dev/null 2>&1
+E_TIME=$(($SECONDS - $S_TIME))
+printf "\e[1;32m DONE \e[0m "
+printf "%02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+
+bin/start
