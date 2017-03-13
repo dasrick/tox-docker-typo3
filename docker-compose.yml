@@ -9,8 +9,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    links:
-      - php
+    networks:
+      - backend
   php:
     build: docker/php-fpm
     volumes:
@@ -26,16 +26,21 @@ services:
       - COMPOSER_HOME=/app/docker/composer
       - LOCAL_USER_ID
       - TYPO3_COMPOSER_AUTOLOAD=On
-    links:
-      - db
+    networks:
+      - backend
   db:
     build: docker/mysql
     volumes:
       - ./docker/mysql-data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "4306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
       MYSQL_DATABASE: tox_typo3
 #      MYSQL_PASSWORD: pass
+    networks:
+      - backend
+
+networks:
+  backend: ~

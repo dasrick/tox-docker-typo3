@@ -7,7 +7,9 @@ S_TIME=$SECONDS
 #if [[ $(uname -r) == *"coreos"* ]]; then
 #	docker-compose -f docker-compose.yml -f docker-compose-dev.yml -f docker-compose-vagrant.yml up -d >/dev/null 2>&1
 #else
-	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d >/dev/null 2>&1
+	docker-compose up -d
+#	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
+#	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d >/dev/null 2>&1
 #fi
 
 E_TIME=$(($SECONDS - $S_TIME))

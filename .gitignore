@@ -1,6 +1,28 @@
+### composer
 composer.phar
 /vendor/
 
-# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+### TYPO3 7.6
+# Ignore several upload and file directories.
+/web/fileadmin/user_upload/
+/web/fileadmin/_temp_/
+/web/fileadmin/_processed_/
+/web/uploads/
+# Ignore cache
+/web/typo3temp/
+# Ignore web folder
+/web/*
+!/web/typo3conf/
+!/web/.htaccess
+# Ignore web/typo3conf folder
+/web/typo3conf/*
+!/web/typo3conf/ext/
+!/web/typo3conf/AdditionalConfiguration.php
+!/web/typo3conf/realurl_conf.php
+# Ignore web/typo3conf/ext folder
+/web/typo3conf/ext/*
+!/web/typo3conf/ext/YOUR_distribution/
+
+### misc
+## docker-sync
+.docker-sync

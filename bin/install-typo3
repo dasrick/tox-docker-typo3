@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+########################################################################################################################
+# TYPO3 installation
+#-----------------------------------------------------------------------------------------------------------------------
+printf "\e[1;34m==>\e[1;37m TYPO3 \e[0m \n"
+
+#printf "\e[1;33m==>\e[1;37m TYPO3 copy \e[1;33m .env \e[0m"
+#cp preset/.env-example .env
+#printf "\e[1;32m DONE \e[0m \n"
+#
+#printf "\e[1;33m==>\e[1;37m TYPO3 copy \e[1;33m LocalConfiguration \e[0m"
+#cp preset/typo3conf/LocalConfiguration.php web/typo3conf/LocalConfiguration.php
+#printf "\e[1;32m DONE \e[0m \n"
+
+printf "\e[1;33m==>\e[1;37m TYPO3 create \e[1;33m ENABLE_INSTALL_TOOL \e[0m"
+touch web/typo3conf/ENABLE_INSTALL_TOOL
+printf "\e[1;32m DONE \e[0m \n"
+
+printf "\e[1;33m==>\e[1;37m TYPO3 install \e[0m \n"
+docker-compose run php composer install
+printf "\e[1;33m==>\e[1;37m TYPO3 install \e[1;32m DONE \e[0m \n"
