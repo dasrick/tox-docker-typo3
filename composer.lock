@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd8c1aabb678d7ad717091428eb93f0f",
+    "content-hash": "5b37a5b9339474baa45d8a26d6f05991",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -59,21 +59,21 @@
         },
         {
             "name": "dmitryd/typo3-realurl",
-            "version": "2.1.5",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitryd/typo3-realurl.git",
-                "reference": "9a233f2b891cc1fd5c8baeba2df63b6915497821"
+                "reference": "da0772cf2c32dcc4a11529b19b7e8be284c54550"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitryd/typo3-realurl/zipball/9a233f2b891cc1fd5c8baeba2df63b6915497821",
-                "reference": "9a233f2b891cc1fd5c8baeba2df63b6915497821",
+                "url": "https://api.github.com/repos/dmitryd/typo3-realurl/zipball/da0772cf2c32dcc4a11529b19b7e8be284c54550",
+                "reference": "da0772cf2c32dcc4a11529b19b7e8be284c54550",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
-                "typo3/cms-core": ">=6.2.0,<8.5.0"
+                "typo3/cms-core": ">=6.2.0,<8.7.0"
             },
             "conflict": {
                 "bednee/cooluri": ">0.0.1",
@@ -120,7 +120,7 @@
                 "cms",
                 "typo3"
             ],
-            "time": "2016-11-03T00:00:00+00:00"
+            "time": "2017-03-09T00:00:00+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -178,24 +178,25 @@
         },
         {
             "name": "fluidtypo3/fluidcontent",
-            "version": "4.4.1",
+            "version": "5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FluidTYPO3/fluidcontent.git",
-                "reference": "3381d01b7dbb2d0d01f0199824ece827dbd47350"
+                "reference": "c50846686f2e2a28891216b50ce9ad6496d68966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FluidTYPO3/fluidcontent/zipball/3381d01b7dbb2d0d01f0199824ece827dbd47350",
-                "reference": "3381d01b7dbb2d0d01f0199824ece827dbd47350",
+                "url": "https://api.github.com/repos/FluidTYPO3/fluidcontent/zipball/c50846686f2e2a28891216b50ce9ad6496d68966",
+                "reference": "c50846686f2e2a28891216b50ce9ad6496d68966",
                 "shasum": ""
             },
             "require": {
-                "fluidtypo3/flux": "*",
-                "php": ">=5.5.0"
+                "fluidtypo3/flux": "^7.3|^8.0|dev-development",
+                "php": ">=7.0.0",
+                "typo3/cms": "^7.6|^8.4"
             },
             "require-dev": {
-                "fluidtypo3/development": "*",
+                "fluidtypo3/development": "^3.0",
                 "fluidtypo3/flux": "dev-development"
             },
             "suggest": {
@@ -222,28 +223,29 @@
                 "flux",
                 "templating"
             ],
-            "time": "2016-03-02T13:41:59+00:00"
+            "time": "2017-03-04T23:50:42+00:00"
         },
         {
             "name": "fluidtypo3/fluidpages",
-            "version": "3.6.1",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FluidTYPO3/fluidpages.git",
-                "reference": "dc86d7e6f6baf3c9b4d2726f90cc7b4f602fbd17"
+                "reference": "7c1b0bce5520eea826773a0af7fd682bf54029b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FluidTYPO3/fluidpages/zipball/dc86d7e6f6baf3c9b4d2726f90cc7b4f602fbd17",
-                "reference": "dc86d7e6f6baf3c9b4d2726f90cc7b4f602fbd17",
+                "url": "https://api.github.com/repos/FluidTYPO3/fluidpages/zipball/7c1b0bce5520eea826773a0af7fd682bf54029b2",
+                "reference": "7c1b0bce5520eea826773a0af7fd682bf54029b2",
                 "shasum": ""
             },
             "require": {
-                "fluidtypo3/flux": "*",
-                "php": ">=5.5.0"
+                "fluidtypo3/flux": "^7.3|^8.0|dev-development",
+                "php": ">=7.0.0",
+                "typo3/cms": "^7.6|^8.4"
             },
             "require-dev": {
-                "fluidtypo3/development": "*",
+                "fluidtypo3/development": "^3.0",
                 "fluidtypo3/flux": "dev-development"
             },
             "suggest": {
@@ -270,24 +272,32 @@
                 "flux",
                 "templating"
             ],
-            "time": "2016-09-10T10:35:53+00:00"
+            "time": "2017-03-04T23:57:57+00:00"
         },
         {
             "name": "fluidtypo3/flux",
-            "version": "7.4.0",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FluidTYPO3/flux.git",
-                "reference": "2ebcec4183f57ffc7faae3cefbb8c7beb567f5af"
+                "reference": "da828b8880dc3606d7b3a2501f32a8349abd1c63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FluidTYPO3/flux/zipball/2ebcec4183f57ffc7faae3cefbb8c7beb567f5af",
-                "reference": "2ebcec4183f57ffc7faae3cefbb8c7beb567f5af",
+                "url": "https://api.github.com/repos/FluidTYPO3/flux/zipball/da828b8880dc3606d7b3a2501f32a8349abd1c63",
+                "reference": "da828b8880dc3606d7b3a2501f32a8349abd1c63",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=7.0.0",
+                "typo3/cms": ">=7.6.13, <7.6.99|^8.4.1"
+            },
+            "replace": {
+                "flux": "self.version",
+                "typo3-ter/flux": "self.version"
+            },
             "require-dev": {
-                "fluidtypo3/development": "*"
+                "fluidtypo3/development": "^3.0"
             },
             "suggest": {
                 "fluidtypo3/fluidcontent": "Gives the ability to render Content Templates with pure fluid.",
@@ -307,27 +317,32 @@
             ],
             "description": "The flux package from FluidTYPO3",
             "homepage": "http://fluidtypo3.org",
-            "time": "2016-05-16T20:17:26+00:00"
+            "time": "2017-03-04T23:24:21+00:00"
         },
         {
             "name": "fluidtypo3/vhs",
-            "version": "3.1.0",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FluidTYPO3/vhs.git",
-                "reference": "8f0435a36f8141e15fca37d75b19bee1bce578f3"
+                "reference": "fd26c4741a4c5da34772c6e7f23ededd5a8027da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FluidTYPO3/vhs/zipball/8f0435a36f8141e15fca37d75b19bee1bce578f3",
-                "reference": "8f0435a36f8141e15fca37d75b19bee1bce578f3",
+                "url": "https://api.github.com/repos/FluidTYPO3/vhs/zipball/fd26c4741a4c5da34772c6e7f23ededd5a8027da",
+                "reference": "fd26c4741a4c5da34772c6e7f23ededd5a8027da",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "php": ">=7.0.0",
+                "typo3/cms": ">=7.6.13, <=7.6.99|^8.4.1"
+            },
+            "replace": {
+                "typo3-ter/vhs": "self.version",
+                "vhs": "self.version"
             },
             "require-dev": {
-                "fluidtypo3/development": "*"
+                "fluidtypo3/development": "^3.0"
             },
             "suggest": {
                 "ext-tidy": "Allows to make use of the tidy ViewHelper"
@@ -352,7 +367,7 @@
                 "utility",
                 "viewhelper"
             ],
-            "time": "2016-10-18T13:44:09+00:00"
+            "time": "2017-03-05T00:32:50+00:00"
         },
         {
             "name": "helhum/config-loader",
@@ -448,16 +463,16 @@
         },
         {
             "name": "helhum/typo3-console",
-            "version": "4.2.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3-Console/typo3_console.git",
-                "reference": "90cbf212ae35b7d9cbe7a849617d3d827c3b233c"
+                "reference": "a38ac2ef12cf4b94fad69d40bdf9fd46f5703ed7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-Console/typo3_console/zipball/90cbf212ae35b7d9cbe7a849617d3d827c3b233c",
-                "reference": "90cbf212ae35b7d9cbe7a849617d3d827c3b233c",
+                "url": "https://api.github.com/repos/TYPO3-Console/typo3_console/zipball/a38ac2ef12cf4b94fad69d40bdf9fd46f5703ed7",
+                "reference": "a38ac2ef12cf4b94fad69d40bdf9fd46f5703ed7",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +496,7 @@
             },
             "require-dev": {
                 "mikey179/vfsstream": "~1.6.0",
-                "nimut/testing-framework": "^0.1",
+                "nimut/testing-framework": "^1.0",
                 "phpunit/phpunit": "~4.8.0",
                 "typo3-console/create-reference-command": "1.0.*@dev",
                 "typo3/cms": "^8.6"
@@ -531,7 +546,7 @@
                 "console",
                 "typo3"
             ],
-            "time": "2017-02-23T00:44:43+00:00"
+            "time": "2017-03-11T23:11:34+00:00"
         },
         {
             "name": "helhum/typo3-console-plugin",
