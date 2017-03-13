@@ -25,4 +25,4 @@ syncs:
 
     sync_excludes_type: 'Name'
 
-    sync_userid: '501'
+    sync_userid: ${LOCAL_USER_ID}
