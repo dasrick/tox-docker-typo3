@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Delete all containers
+bin/cleanup-docker-container
+# Delete all images
+bin/cleanup-docker-images

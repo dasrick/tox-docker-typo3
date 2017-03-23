@@ -3,9 +3,11 @@ version: '2'
 services:
   web:
     build: docker/httpd
+    image: tox/httpd:2.4.25
     volumes:
       - .:/app
       - ./docker/httpd/vhost.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ./docker/httpd/ssl:/usr/local/apache2/ssl
     ports:
       - "80:80"
       - "443:443"
@@ -13,10 +15,11 @@ services:
       - backend
   php:
     build: docker/php-fpm
+    image: tox/php-fpm:7.1.2
+    working_dir: /app
     volumes:
       - .:/app
       - ./docker/php-fpm/php.ini:/usr/local/etc/php/conf.d/99-custom.ini
-    working_dir: /app
     environment:
       - BLACKFIRE_SERVER_ID
       - BLACKFIRE_SERVER_TOKEN
@@ -26,11 +29,17 @@ services:
       - COMPOSER_HOME=/app/docker/composer
       - LOCAL_USER_ID
       - TYPO3_COMPOSER_AUTOLOAD=On
+      # next setting for php-dev only
+      - PHP_IDE_CONFIG=serverName=local-typo3.gcloud.fti-group.com
+      - TYPO3_CONTEXT=Development
+#      - XDEBUG_CONFIG=remote_host=192.168.130.106 idekey=xdebug
     networks:
       - backend
   db:
     build: docker/mysql
+    image: tox/mysql:5.7.17
     volumes:
+      - .:/app
       - ./docker/mysql-data:/var/lib/mysql
     ports:
       - "4306:3306"

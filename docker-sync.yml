@@ -7,22 +7,39 @@ options:
 
 syncs:
   unison-sync:
-
-    sync_strategy: 'unison'
-
     notify_terminal: true
 
     src: './'
-
     dest: '/app/'
 
-    sync_host_ip: '127.0.0.1'
-
+    sync_strategy: 'unison'
+    sync_userid: ${LOCAL_USER_ID}
+#    sync_host_ip: '127.0.0.1'
     sync_host_port: 10872
-
-    # optional, a list of excludes for rsync - see rsync docs for details
-    sync_excludes: ['.git', '.gitignore', '.DS_Store', '.idea', '.editorconfig', 'docker', 'docker-sync.yml', 'docker-compose.yml', 'docker-compose-dev.yml', 'var/logs/*', 'var/cache/*']
-
+    sync_excludes:
+#      - '.mage/'
+      - 'bin/'
+#      - 'conf/'
+      - 'docker/'
+#      - 'preset/'
+      - 'var/logs/*'
+      - 'var/cache/*'
+      - '.git/'
+      - '.idea/'
+      - '.gitignore'
+      - '.DS_Store'
+      - '.editorconfig'
+      - 'docker-sync.yml'
+      - 'docker-compose.yml'
+      - 'docker-compose-dev.yml'
+      - '*.md'
     sync_excludes_type: 'Name'
 
-    sync_userid: ${LOCAL_USER_ID}
+    watch_excludes:
+      - '.git/'
+      - '.mage/'
+      - 'bin/'
+      - 'conf/'
+      - 'docker/'
+      - 'preset/'
+      - 'Packages/'

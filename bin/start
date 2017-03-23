@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
 
-
-printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m up \e[0m"
+printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m up \e[1;32m START \e[0m \n"
 S_TIME=$SECONDS
 
-#if [[ $(uname -r) == *"coreos"* ]]; then
-#	docker-compose -f docker-compose.yml -f docker-compose-dev.yml -f docker-compose-vagrant.yml up -d >/dev/null 2>&1
-#else
-	docker-compose up -d
-#	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d
-#	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d >/dev/null 2>&1
-#fi
+docker-compose up -d
 
 E_TIME=$(($SECONDS - $S_TIME))
-printf "\e[1;32m DONE \e[0m "
-printf "%02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m up \e[1;32m DONE \e[0m %02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))

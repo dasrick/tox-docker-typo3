@@ -15,7 +15,7 @@ You have to install docker-sync.io ...
 
 #### stop
 
-At first CMD+C ...
+At first CMD+C ... and if you would like to clean the complete docker volume then:
 
     docker-sync-stack clean
 
