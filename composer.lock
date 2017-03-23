@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b37a5b9339474baa45d8a26d6f05991",
+    "content-hash": "c4c2521ed2aca93d2fee2ee26e9332f9",
     "packages": [
+        {
+            "name": "clickstorm/cs_seo",
+            "version": "1.8.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clickstorm/cs_seo.git",
+                "reference": "49e6d294c9a6952eecd2a5d47cde0a2f4176c163"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clickstorm/cs_seo/zipball/49e6d294c9a6952eecd2a5d47cde0a2f4176c163",
+                "reference": "49e6d294c9a6952eecd2a5d47cde0a2f4176c163",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": ">=6.2.0"
+            },
+            "replace": {
+                "cs_seo": "*"
+            },
+            "suggest": {
+                "typo3-ter/realurl": "*"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "Clickstorm\\CsSeo\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "[clickstorm] SEO",
+            "homepage": "http://www.clickstorm.de",
+            "keywords": [
+                "clickstorm",
+                "cms",
+                "seo",
+                "typo3"
+            ],
+            "time": "2017-02-10T16:39:03+00:00"
+        },
         {
             "name": "cogpowered/finediff",
             "version": "0.3.1",
@@ -707,45 +750,6 @@
                 "deployment"
             ],
             "time": "2016-09-09T05:16:03+00:00"
-        },
-        {
-            "name": "mblaschke/metaseo",
-            "version": "2.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mblaschke/TYPO3-metaseo.git",
-                "reference": "7c749b5c9321e67c7258bc9100d9272eacacf3ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mblaschke/TYPO3-metaseo/zipball/7c749b5c9321e67c7258bc9100d9272eacacf3ed",
-                "reference": "7c749b5c9321e67c7258bc9100d9272eacacf3ed",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "typo3/cms-core": ">=6.2.0,<8.0"
-            },
-            "replace": {
-                "metaseo": "self.version",
-                "typo3-ter/metaseo": "self.version"
-            },
-            "type": "typo3-cms-extension",
-            "autoload": {
-                "psr-4": {
-                    "Metaseo\\Metaseo\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "description": "SEO extension for TYPO3",
-            "homepage": "https://github.com/mblaschke/TYPO3-metaseo",
-            "keywords": [
-                "TYPO3 CMS"
-            ],
-            "time": "2016-12-31T11:33:57+00:00"
         },
         {
             "name": "mso/idna-convert",
@@ -2313,16 +2317,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.15",
+            "version": "5.7.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5"
+                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b99112aecc01f62acf3d81a3f59646700a1849e5",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68752b665d3875f9a38a357e3ecb35c79f8673bf",
+                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf",
                 "shasum": ""
             },
             "require": {
@@ -2391,7 +2395,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-02T15:22:43+00:00"
+            "time": "2017-03-19T16:52:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

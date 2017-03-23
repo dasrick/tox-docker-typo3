@@ -48,7 +48,7 @@
         "dmitryd/typo3-realurl": "^2.1.5",
         "sjbr/static-info-tables": "^6.3.0",
         "lochmueller/sourceopt": "~0.9.3",
-        "mblaschke/metaseo": "^2.0.3",
+        "clickstorm/cs_seo": "^1.8.6",
 
         "helhum/dotenv-connector": "^1.0.0",
         "helhum/config-loader": "^0.1.0",
