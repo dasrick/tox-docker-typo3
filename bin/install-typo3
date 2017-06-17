@@ -7,23 +7,33 @@ S_TIME=$SECONDS
 msgStart story "$story_title" "$story_subtitle"
 
 # START task -----------------------------------------------------------------------------------------------------------
-#START_TIME=$SECONDS
-#task_title="copy .env"
-#msgStart task "$story_title" "$task_title"
-#
-#cp preset/.env-example .env
-#
-#msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+START_TIME=$SECONDS
+task_title="copy .env"
+msgStart task "$story_title" "$task_title"
+
+cp preset/.env-example .env
+
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------
 
 # START task -----------------------------------------------------------------------------------------------------------
-#START_TIME=$SECONDS
-#task_title="copy LocalConfiguration"
-#msgStart task "$story_title" "$task_title"
-#
-#cp preset/typo3conf/LocalConfiguration.php web/typo3conf/LocalConfiguration.php
-#
-#msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+START_TIME=$SECONDS
+task_title="copy LocalConfiguration"
+msgStart task "$story_title" "$task_title"
+
+cp preset/typo3conf/LocalConfiguration.php web/typo3conf/LocalConfiguration.php
+
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
+
+# START task -----------------------------------------------------------------------------------------------------------
+START_TIME=$SECONDS
+task_title="copy AdditionalConfiguration"
+msgStart task "$story_title" "$task_title"
+
+cp preset/typo3conf/AdditionalConfiguration.php web/typo3conf/AdditionalConfiguration.php
+
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------
 
 # START task -----------------------------------------------------------------------------------------------------------
@@ -41,7 +51,7 @@ START_TIME=$SECONDS
 task_title="composer install"
 msgStart task "$story_title" "$task_title"
 
-docker-compose run php composer install
+docker-compose run php reset && composer install
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------

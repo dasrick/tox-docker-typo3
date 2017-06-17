@@ -2,7 +2,7 @@
 composer.phar
 /vendor/
 
-### TYPO3 7.6
+### TYPO3 >=7.6
 # Ignore several upload and file directories.
 /web/fileadmin/user_upload/
 /web/fileadmin/_temp_/
@@ -17,9 +17,11 @@ composer.phar
 # Ignore web/typo3conf folder
 /web/typo3conf/*
 !/web/typo3conf/ext/
-!/web/typo3conf/AdditionalConfiguration.php
+#!/web/typo3conf/AdditionalConfiguration.php
 !/web/typo3conf/realurl_conf.php
 # Ignore web/typo3conf/ext folder
 /web/typo3conf/ext/*
 !/web/typo3conf/ext/YOUR_distribution/
 
+### misc
+.env

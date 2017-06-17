@@ -25,8 +25,11 @@ task_title="cleanup bin"
 msgStart task "$story_title" "$task_title"
 
 rm -rf \
+    bin/doctrine-dbal \
+    bin/fluid \
     bin/mage \
     bin/phpunit \
+    bin/typo3 \
     bin/typo3cms \
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
@@ -56,6 +59,7 @@ rm -rf \
         web/fileadmin \
         web/typo3 \
         web/typo3conf/ENABLE_INSTALL_TOOL \
+        web/typo3conf/AdditionalConfiguration.php \
         web/typo3conf/LocalConfiguration.php \
         web/typo3conf/PackageStates.php \
         web/typo3conf/ext/cs_seo \
