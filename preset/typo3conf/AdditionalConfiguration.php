@@ -1,6 +1,8 @@
 <?php
+
 use Dasrick\TYPO3\Distribution\Config\ConfigLoaderFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 // We let the loader load context and environment specific configuration
 // No other code must go in here!
 $context = GeneralUtility::getApplicationContext()->isProduction() ? 'production' : 'development';

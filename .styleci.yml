@@ -57,5 +57,6 @@ finder:
     - ".Build"
     - "doc"
     - "Resources"
+    - "LocalConfiguration.php"
   not-name:
     - "ext_emconf.php"
