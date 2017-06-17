@@ -23,6 +23,3 @@ composer.phar
 /web/typo3conf/ext/*
 !/web/typo3conf/ext/YOUR_distribution/
 
-### misc
-## docker-sync
-.docker-sync
