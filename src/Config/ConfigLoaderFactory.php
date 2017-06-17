@@ -43,8 +43,7 @@ class ConfigLoaderFactory
             $cacheIdentifier = self::getCacheIdentifier($context, $fileWatches);
         }
 
-        return new CachedConfigurationLoader
-        (
+        return new CachedConfigurationLoader(
             $cacheDir,
             $cacheIdentifier,
             function () use ($confDir, $context) {
