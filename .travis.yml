@@ -1,7 +1,7 @@
 language: php
 
-node_js:
-  - '8'
+php:
+  - 7
 
 sudo: false
 
@@ -14,12 +14,16 @@ cache:
   directories:
     - $HOME/.composer/cache
 
+before_install:
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+  - composer --version
+
 before_script:
   - composer install
-#  - export typo3DatabaseName="typo3"
-#  - export typo3DatabaseHost="localhost"
-#  - export typo3DatabaseUsername="root"
-#  - export typo3DatabasePassword=""
 
 script:
-  - ./bin/phpunit
+  - >
+    echo;
+    echo "Running unit tests";
+    ./bin/phpunit
