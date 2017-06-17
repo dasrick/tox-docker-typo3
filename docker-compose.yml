@@ -30,7 +30,7 @@ services:
       - LOCAL_USER_ID
       - TYPO3_COMPOSER_AUTOLOAD=On
       # next setting for php-dev only
-      - PHP_IDE_CONFIG=serverName=local-typo3.gcloud.fti-group.com
+      - PHP_IDE_CONFIG=serverName=tox-typo3.local
       - TYPO3_CONTEXT=Development
 #      - XDEBUG_CONFIG=remote_host=192.168.130.106 idekey=xdebug
     networks:
