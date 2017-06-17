@@ -12,7 +12,7 @@ class ConfigLoaderFactory
     /**
      * @param string $context
      * @param string $rootDir
-     * @param array  $additionalFileWatches
+     * @param array $additionalFileWatches
      * @param string $fixedCacheIdentifier
      *
      * @return CachedConfigurationLoader
@@ -22,7 +22,8 @@ class ConfigLoaderFactory
         $rootDir,
         $fixedCacheIdentifier = null,
         array $additionalFileWatches = []
-    ) {
+    )
+    {
         $confDir = $rootDir . '/conf';
         $cacheDir = $rootDir . '/var/cache';
         if ($fixedCacheIdentifier) {
@@ -60,7 +61,7 @@ class ConfigLoaderFactory
 
     /**
      * @param string $context
-     * @param array  $fileWatches
+     * @param array $fileWatches
      *
      * @return string
      */
