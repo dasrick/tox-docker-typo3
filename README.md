@@ -1,35 +1,24 @@
 # tox-docker-typo3
 
-playgound for TYPO3 for docker using docker-compose and docker-sync
+playgound for TYPO3 for docker using docker-compose ...
 
 
 ## Usage
 
-### macOS
-
-You have to install docker-sync.io ...
-
-#### start
-
-    docker-sync-stack start
-
-#### stop
-
-At first CMD+C ... and if you would like to clean the complete docker volume then:
-
-    docker-sync-stack clean
-
-### linux
-
-currently untested ...
 
 #### start
 
     docker-compose up -d
+    
+    # shortcut
+    bin/start
 
 #### stop
 
     docker-compose down
+    
+    # shortcut
+    bin/stop
 
 ## Structur
 
@@ -39,8 +28,7 @@ need desciption for nearly every folder and file ;-)
     - .editorconfig
     - .gitignore
     - docker-compose.yml
-    - docker-compose-dev.yml
-    - docker-sync.yml
+    - docker-compose-mac.yml
     - LICENSE
     - README.md
 

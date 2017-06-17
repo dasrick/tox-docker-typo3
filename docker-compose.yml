@@ -3,7 +3,7 @@ version: '2'
 services:
   web:
     build: docker/httpd
-    image: tox/httpd:2.4.25
+    image: tox-t3/httpd:2.4.25
     volumes:
       - .:/app
       - ./docker/httpd/vhost.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
@@ -15,7 +15,7 @@ services:
       - backend
   php:
     build: docker/php-fpm
-    image: tox/php-fpm:7.1.2
+    image: tox-t3/php-fpm:7.1.2
     working_dir: /app
     volumes:
       - .:/app
@@ -37,7 +37,7 @@ services:
       - backend
   db:
     build: docker/mysql
-    image: tox/mysql:5.7.17
+    image: tox-t3/mysql:5.7.17
     volumes:
       - .:/app
       - ./docker/mysql-data:/var/lib/mysql

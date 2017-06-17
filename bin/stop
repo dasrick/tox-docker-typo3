@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m down \e[1;32m START \e[0m \n"
+source $(pwd)/bin/helper.sh
+story_title="tox-TYPO3"
+story_subtitle="STOP Container"
 S_TIME=$SECONDS
+msgStart story "$story_title" "$story_subtitle"
 
+# START task -----------------------------------------------------------------------------------------------------------
 docker-compose down
+# END task -------------------------------------------------------------------------------------------------------------
 
-E_TIME=$(($SECONDS - $S_TIME))
-printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m down \e[1;32m DONE \e[0m %02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+msgDone story "$story_title" "$story_subtitle" "$(($SECONDS - $S_TIME))"

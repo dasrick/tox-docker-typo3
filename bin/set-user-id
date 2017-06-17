@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-printf "\e[1;34m==>\e[1;37m PREPARATION \e[0m \n"
-printf "\e[1;33m==>\e[1;37m PREPARATION \e[1;33m set local user id \e[0m"
+source $(pwd)/bin/helper.sh
+story_title="tox-TYPO3"
+story_subtitle="PREPARATION"
 S_TIME=$SECONDS
+msgStart story "$story_title" "$story_subtitle"
+
+# START task -----------------------------------------------------------------------------------------------------------
+START_TIME=$SECONDS
+task_title="set local user id"
+msgStart task "$story_title" "$task_title"
 
 if  grep -q "export LOCAL_USER_ID=" ~/.zshrc; then
 	true
@@ -25,6 +32,7 @@ if [[ $(uname -s) == "Darwin" ]]; then
 fi
 export LOCAL_USER_ID=$(id -u)
 
-E_TIME=$(($SECONDS - $S_TIME))
-printf "\e[1;32m DONE \e[0m "
-printf "%02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
+
+msgDone story "$story_title" "$story_subtitle" "$(($SECONDS - $S_TIME))"

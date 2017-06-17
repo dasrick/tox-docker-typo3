@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 # Delete all images
-docker rmi $(docker images -q)
+#docker rmi $(docker images -q)
+
+# Delete only project specific images
+docker rmi $(docker images | awk '$1 ~ /tox-t3/ { print $3 }')

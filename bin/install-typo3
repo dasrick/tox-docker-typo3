@@ -1,22 +1,49 @@
 #!/usr/bin/env bash
 
-########################################################################################################################
-# TYPO3 installation
-#-----------------------------------------------------------------------------------------------------------------------
-printf "\e[1;34m==>\e[1;37m TYPO3 \e[0m \n"
+source $(pwd)/bin/helper.sh
+story_title="tox-TYPO3"
+story_subtitle="TYPO3 installation"
+S_TIME=$SECONDS
+msgStart story "$story_title" "$story_subtitle"
 
-#printf "\e[1;33m==>\e[1;37m TYPO3 copy \e[1;33m .env \e[0m"
-#cp preset/.env-example .env
-#printf "\e[1;32m DONE \e[0m \n"
+# START task -----------------------------------------------------------------------------------------------------------
+#START_TIME=$SECONDS
+#task_title="copy .env"
+#msgStart task "$story_title" "$task_title"
 #
-#printf "\e[1;33m==>\e[1;37m TYPO3 copy \e[1;33m LocalConfiguration \e[0m"
+#cp preset/.env-example .env
+#
+#msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
+
+# START task -----------------------------------------------------------------------------------------------------------
+#START_TIME=$SECONDS
+#task_title="copy LocalConfiguration"
+#msgStart task "$story_title" "$task_title"
+#
 #cp preset/typo3conf/LocalConfiguration.php web/typo3conf/LocalConfiguration.php
-#printf "\e[1;32m DONE \e[0m \n"
+#
+#msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
 
-printf "\e[1;33m==>\e[1;37m TYPO3 create \e[1;33m ENABLE_INSTALL_TOOL \e[0m"
+# START task -----------------------------------------------------------------------------------------------------------
+START_TIME=$SECONDS
+task_title="create ENABLE_INSTALL_TOOL"
+msgStart task "$story_title" "$task_title"
+
 touch web/typo3conf/ENABLE_INSTALL_TOOL
-printf "\e[1;32m DONE \e[0m \n"
 
-printf "\e[1;33m==>\e[1;37m TYPO3 install \e[0m \n"
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
+
+# START task -----------------------------------------------------------------------------------------------------------
+START_TIME=$SECONDS
+task_title="composer install"
+msgStart task "$story_title" "$task_title"
+
 docker-compose run php composer install
-printf "\e[1;33m==>\e[1;37m TYPO3 install \e[1;32m DONE \e[0m \n"
+
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
+
+msgDone story "$story_title" "$story_subtitle" "$(($SECONDS - $S_TIME))"

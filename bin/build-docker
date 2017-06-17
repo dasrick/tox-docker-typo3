@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
 
-printf "\e[1;34m==>\e[1;37m DOCKER \e[0m \n"
+
+source $(pwd)/bin/helper.sh
+story_title="tox-TYPO3"
+story_subtitle="DOCKER"
+S_TIME=$SECONDS
+msgStart story "$story_title" "$story_subtitle"
 
 bin/stop
 
-printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m build default \e[1;32m START \e[0m \n"
-S_TIME=$SECONDS
+# START task -----------------------------------------------------------------------------------------------------------
+START_TIME=$SECONDS
+task_title="build default"
+msgStart task "$story_title" "$task_title"
 
 docker-compose -f docker-compose.yml build
 
-E_TIME=$(($SECONDS - $S_TIME))
-printf "\e[1;33m==>\e[1;37m DOCKER \e[1;33m build default \e[1;32m DONE \e[0m %02d:%02d\n" $(($E_TIME/60)) $(($E_TIME%60))
+msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
+# END task -------------------------------------------------------------------------------------------------------------
 
 bin/start
+
+msgDone story "$story_title" "$story_subtitle" "$(($SECONDS - $S_TIME))"

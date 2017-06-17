@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-START_TIME=$SECONDS
-
-printf "\e[1;35m==>\e[1;37m FirstRun \e[0m \n"
+source $(pwd)/bin/helper.sh
+story_title="tox-TYPO3"
+story_subtitle="FirstRun"
+S_TIME=$SECONDS
+msgStart story "$story_title" "$story_subtitle"
 
 ########################################################################################################################
 # set user id for ***
@@ -27,8 +29,5 @@ bin/build-docker
 #-----------------------------------------------------------------------------------------------------------------------
 bin/install-typo3
 
-ELAPSED_TIME=$(($SECONDS - $START_TIME))
-printf "\n\e[1;35m==>\e[1;37m FirstRun \e[1;32m DONE \e[1;37m $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec \n"
-
+msgDone story "$story_title" "$story_subtitle" "$(($SECONDS - $S_TIME))"
 printf "$(cat bin/welcome.txt)"
-#=======================================================================================================================

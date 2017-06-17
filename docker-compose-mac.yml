@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  web:
+    volumes:
+      - .:/app:cached
+  php:
+    volumes:
+      - .:/app:cached
