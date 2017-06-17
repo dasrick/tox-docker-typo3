@@ -1,5 +1,7 @@
 # tox-docker-typo3
 
+[![Build Status](https://travis-ci.org/dasrick/tox-docker-typo3.svg?branch=master)](https://travis-ci.org/dasrick/tox-docker-typo3)
+
 playgound for TYPO3 for docker using docker-compose ...
 
 ***
