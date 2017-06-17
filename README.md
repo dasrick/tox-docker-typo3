@@ -45,6 +45,7 @@ Use the script to setup you local dev ... all steps of this script are described
 
     bin/firstRun
 
+Now open the [Installer](https://tox-typo3.local/typo3/install/) and finish the setup (credentials see preset/.env-example).
 
 ## Usage
 
