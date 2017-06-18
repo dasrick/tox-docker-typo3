@@ -43,7 +43,7 @@ Add the following line into your local etc hosts file
  
 Use the script to setup you local dev ... all steps of this script are described inside of *bin* folder ... later
 
-    bin/firstRun
+    bin/first-run
 
 Now open the [Installer](https://tox-typo3.local/typo3/install/) and finish the setup (credentials see preset/.env-example).
 
