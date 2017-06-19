@@ -1,4 +1,4 @@
-preset: psr2
+preset: symfony
 
 enabled:
 #  - alpha_ordered_imports
