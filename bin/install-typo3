@@ -6,6 +6,8 @@ story_subtitle="TYPO3 installation"
 S_TIME=$SECONDS
 msgStart story "$story_title" "$story_subtitle"
 
+mkdir -p typo3conf
+
 # START task -----------------------------------------------------------------------------------------------------------
 START_TIME=$SECONDS
 task_title="copy .env"
@@ -21,7 +23,7 @@ START_TIME=$SECONDS
 task_title="copy LocalConfiguration"
 msgStart task "$story_title" "$task_title"
 
-cp preset/typo3conf/LocalConfiguration.php web/typo3conf/LocalConfiguration.php
+cp preset/typo3conf/LocalConfiguration.php typo3conf/LocalConfiguration.php
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------
@@ -31,7 +33,7 @@ START_TIME=$SECONDS
 task_title="copy AdditionalConfiguration"
 msgStart task "$story_title" "$task_title"
 
-cp preset/typo3conf/AdditionalConfiguration.php web/typo3conf/AdditionalConfiguration.php
+cp preset/typo3conf/AdditionalConfiguration.php typo3conf/AdditionalConfiguration.php
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ START_TIME=$SECONDS
 task_title="create ENABLE_INSTALL_TOOL"
 msgStart task "$story_title" "$task_title"
 
-touch web/typo3conf/ENABLE_INSTALL_TOOL
+touch typo3conf/ENABLE_INSTALL_TOOL
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------
@@ -51,7 +53,7 @@ START_TIME=$SECONDS
 task_title="composer install"
 msgStart task "$story_title" "$task_title"
 
-docker-compose run php reset && composer install
+docker-compose run php composer install
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------

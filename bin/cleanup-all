@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+bin/stop
+# Delete all created files and folders
+bin/cleanup-installation
+# Delete all containers and all images
+bin/cleanup-docker-all

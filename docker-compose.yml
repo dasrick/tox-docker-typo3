@@ -15,7 +15,7 @@ services:
       - backend
   php:
     build: docker/php-fpm
-    image: tox-t3/php-fpm:7.1.2
+    image: tox-t3/php-fpm:5.6.31
     working_dir: /app
     volumes:
       - .:/app

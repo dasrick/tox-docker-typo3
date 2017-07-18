@@ -8,8 +8,8 @@ playgound for TYPO3 for docker using docker-compose ...
 
 ## some specs
 
-* based on TYPO3 7.6.*
-* PHP FMP 7.1.2
+* based on TYPO3 6.2.*
+* PHP FPM 5.6.31
 * MySQL mysql:5.7.17
 * Apache 2.4.25
 

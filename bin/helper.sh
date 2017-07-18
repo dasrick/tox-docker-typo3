@@ -41,6 +41,8 @@ function msgStart() {
     fi
 
     printf "\e[1;33m==>$type_color  $story_msg $task_msg_xxl \e[0m \n"
+
+    printf "\e[1;31m";  # RED for error stuff
 }
 
 function msgDone() {
@@ -86,7 +88,7 @@ function msgDone() {
     # ELAPSED_TIME -----------------------------------------------------------------------------------------------------
     shift
     ELAPSED_TIME=$1
-    
+
     printf "\e[1;33m==>$type_color  $story_msg $task_msg_xxl \e[0m %02d:%02d\n" $(($ELAPSED_TIME/60)) $(($ELAPSED_TIME%60))
 }
 

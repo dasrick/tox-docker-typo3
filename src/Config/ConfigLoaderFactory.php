@@ -32,8 +32,8 @@ class ConfigLoaderFactory
         } else {
             $fileWatches = array_merge(
                 [
-                    $rootDir . '/web/typo3conf/LocalConfiguration.php',
-                    $rootDir . '/web/typo3conf/AdditionalConfiguration.php',
+                    $rootDir . '/typo3conf/LocalConfiguration.php',
+                    $rootDir . '/typo3conf/AdditionalConfiguration.php',
                     $confDir . '/default.php',
                     $confDir . '/' . $context . '.php',
                     $rootDir . '/.env',

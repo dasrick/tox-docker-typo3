@@ -12,8 +12,8 @@ task_title="cleanup root"
 msgStart task "$story_title" "$task_title"
 
 rm -rf \
-    .docker-sync \
     vendor \
+    Packages \
     .env \
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
@@ -76,6 +76,20 @@ rm -rf \
         web/typo3temp \
         web/uploads \
         web/index.php \
+        fileadmin \
+        typo3temp \
+        uploads \
+        typo3 \
+        typo3conf/ENABLE_INSTALL_TOOL \
+        typo3conf/AdditionalConfiguration.php \
+        typo3conf/LocalConfiguration.php \
+        typo3conf/PackageStates.php \
+        typo3conf/ext \
+        typo3conf/l10n \
+        typo3conf/LocalConfiguration.beforePackageStatesMigration.php \
+        typo3conf \
+        typo3_src \
+        index.php \
 
 msgDone task "$story_title" "$task_title" $(($SECONDS - $START_TIME))
 # END task -------------------------------------------------------------------------------------------------------------

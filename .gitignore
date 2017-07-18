@@ -1,6 +1,7 @@
 ### composer
 composer.phar
 /vendor/
+/Packages/
 
 ### TYPO3 >=7.6
 # Ignore several upload and file directories.
@@ -22,6 +23,18 @@ composer.phar
 # Ignore web/typo3conf/ext folder
 /web/typo3conf/ext/*
 !/web/typo3conf/ext/YOUR_distribution/
+
+### TYPO3 6.2
+/fileadmin/
+/uploads/
+# Ignore cache
+/typo3temp/
+# source  and symlink
+/typo3
+/typo3_src/
+index.php
+# Ignore web/typo3conf folder
+/typo3conf/*
 
 ### misc
 .env
